@@ -56,14 +56,9 @@ describe('User', () => {
         expect(user.friends).to.deep.equal([16,4,8]);
         expect(user1.friends).to.deep.equal([48,7,44,8]);
     });
-});
 
-/**
- * * A user represents a single user
- * ! Should have a parameter to take in a userData object
- * ! Test: Test that all the properties are populated with 
- * ! the correct user data
- * Each user holds on to the user properties from the data file
- * ? Method to return the user's first name only
- * ? Test: Given a user return the first name only
- */
+    it('should be able to return the user\'s first name', () => {
+        expect(user.accessUserName()).to.equal('Luisa');
+        expect(user1.accessUserName()).to.equal('Mae');
+    });
+});
