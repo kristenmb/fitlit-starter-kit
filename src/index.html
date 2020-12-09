@@ -2,11 +2,18 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
     <title>Activity Tracker</title>
   </head>
   <body>
-    <h1>Activity Tracker</h1>
-
+    <h1 class="greeting" id="greeting">Welcome, User!</h1>
+    <div class="widget-wrapper">
+      <section class="widget">Water Intake</section>
+      <section class="widget">Step count</section>
+      <section class="widget">Average sleep hrs</section>
+      <section class="widget">Sleep quality</section>
+      <section class="widget">Flights climbed</section>
+    </div>
     <script type="text/javascript" src="../data/users.js"></script>
     <script type="text/javascript" src="../data/hydration.js"></script>
     <script type="text/javascript" src="../data/sleep.js"></script>
