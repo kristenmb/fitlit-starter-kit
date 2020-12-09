@@ -1,0 +1,53 @@
+* {
+  border: solid 2px pink;
+  font-family: 'Hind Siliguri', sans-serif;
+  color: white;
+  background-color: #080D72;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  font-size: 25pt;
+  margin: 30px;
+}
+
+.widget-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 5%;
+  justify-content: center;
+  margin: 30px;
+  height: 100%;
+  width: 100%;
+}
+
+.widget {
+  border-radius: 20px;
+  background: rgb(24,127,148);
+  background: radial-gradient(circle, rgba(24,127,148,1) .5%, rgba(3,5,43,1) 75%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.long {
+  grid-column: span 2;
+}
+
+.tall {
+  grid-row: span 2;
+}
