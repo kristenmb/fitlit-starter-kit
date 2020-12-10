@@ -11,10 +11,18 @@ describe('Hydration', () => {
   let hydration;
 
   beforeEach((done) => {
-    user = new User(users[6]);
+    user = new User(users[4]);
     hydration = new Hydration(user);
+    done();
   });
 
+  it('should be an instance of Hydration', () => {
+    expect(hydration).to.be.an.instanceof(Hydration);
+  });
+
+  it('should take in a user', () => {
+    expect(hydration.user).to.deep.equal(user)
+  });
   //TEST for property of user
 
   //find the average fluid ounces consumed per day for all time
