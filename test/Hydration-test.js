@@ -2,17 +2,49 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Hydration = require('../src/Hydration');
-const hydration = require('../data/hydration');
-const User = require('../src/User');
-const users = require('./test-data/user-data');
 
 describe('Hydration', () => {
-  let user;
   let hydration;
+  let hydrationData;
 
   beforeEach((done) => {
-    user = new User(users[4]);
-    hydration = new Hydration(user);
+    hydrationData = [
+      {
+        userID: 5,
+        date: '2019/06/15',
+        numOunces: 42
+      },
+      {
+        userID: 5,
+        date: '2019/06/16',
+        numOunces: 79
+      },
+      {
+        userID: 5,
+        date: '2019/06/17',
+        numOunces: 99
+      },
+      {
+        userID: 5,
+        date: '2019/06/18',
+        numOunces: 39
+      },
+      {
+        userID: 5,
+        date: '2019/06/19',
+        numOunces: 69
+      },
+      {
+        userID: 5,
+        date: '2019/06/20',
+        numOunces: 89
+      },
+      {
+        userID: 5,
+        date: '2019/06/21',
+        numOunces: 73
+      }];
+    hydration = new Hydration(5, hydrationData);
     done();
   });
 
@@ -20,18 +52,19 @@ describe('Hydration', () => {
     expect(hydration).to.be.an.instanceof(Hydration);
   });
 
-  it('should take in a user', () => {
-    expect(hydration.user).to.deep.equal(user)
+  it('should take in a user id', () => {
+    expect(hydration.id).to.equal(5)
   });
-  //TEST for property of user
 
-  //find the average fluid ounces consumed per day for all time
-  // input: array of objects with keys userid, date, numounces
-  // output: a single number - ave of all oz all time
-  //method: sum of all oz for ever day divided by the number of days logged
-  // // filter for our specific user
-  // // reduce to a single value
-  //TEST: for the given user - calcAllTimeHydrationAvg() would return a single value.
+  it('should take in the hydration data set', () => {
+    expect(hydration.data).to.deep.equal(hydrationData);
+  });
+
+  it('should be able to calculate the average fluid ounces consumed for all time', () => {
+    expect(hydration.calcAllTimeHydrationAvg()).to.equal(70);
+  });
+
+
 
 // find how many fluid ounces they consumed for a specific day (identified by a date)
   //input: array of objects
