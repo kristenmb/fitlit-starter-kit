@@ -9,8 +9,23 @@ class Hydration {
       acc += day.numOunces
       return acc;
     }, 0);
-    
+
     return Math.floor(totalOz / this.data.length);
+  }
+
+  findOuncesByDate(date) {
+    const dateData = this.data.find(item => item.date === date);
+    return dateData.numOunces;
+  }
+
+  createWeeklyHydrationLog(date) {
+    const index = this.data.findIndex(item => item.date === date);
+    const weeklyData = this.data.slice(index, index + 7);
+    const weeklyOunceLog = weeklyData.reduce((hydrationLog, day) => {
+      hydrationLog[day.date] = day.numOunces;
+      return hydrationLog;
+    }, {});
+    return weeklyOunceLog;
   }
 }
 

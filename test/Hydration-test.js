@@ -64,17 +64,19 @@ describe('Hydration', () => {
     expect(hydration.calcAllTimeHydrationAvg()).to.equal(70);
   });
 
+  it('should find the fluid ounces consumed on a specific day', () => {
+    expect(hydration.findOuncesByDate('2019/06/17')).to.equal(99);
+  });
 
-
-// find how many fluid ounces they consumed for a specific day (identified by a date)
-  //input: array of objects
-  //output: value of numOunces for given date
-  //method: find object that matches given date and return numOunces value
-  //TEST: for the user - findOuncesByDate() will return the correct numOunces.
-
-// how many fluid ounces of water consumed each day over the course of a week (7 days) - return the amount for each day
-  //input: array of objects
-  //output: object with keys of dates and values of oz
-  //method: filter for user's data set, filter for dates we want, reduce to new object
-  //TEST: for the use - createWeeklyHydrationLog() to return object with correct key:value pairs
+  it('should return the fluid ounces consumed for each day over a week', () => {
+    expect(hydration.createWeeklyHydrationLog('2019/06/15')).to.deep.equal({
+  '2019/06/15': 42,
+  '2019/06/16': 79,
+  '2019/06/17': 99,
+  '2019/06/18': 39,
+  '2019/06/19': 69,
+  '2019/06/20': 89,
+  '2019/06/21': 73
+    });
+  });
 });
