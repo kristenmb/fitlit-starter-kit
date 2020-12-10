@@ -66,3 +66,12 @@ p {
   justify-content: center;
   align-items: center;
 }
+
+img {
+  height: auto;
+  max-width: 20%;
+}
+
+.step {
+  fill: #63f44d;
+}
