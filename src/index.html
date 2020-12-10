@@ -10,17 +10,17 @@
   </head>
   <body>
     <div class="widget-wrapper">
-      <section class="widget extra-long" id="user-info">
+      <section class="widget extra-long">
         <h1 class="greeting" id="greeting">Welcome, User!</h1>
-        <p> USER INFO </p>
+        <p id="user-info"> USER INFO </p>
       </section>
       <section class="widget" id="daily-steps">
-        <img src="" alt="shoe soles" class="steps">
+        <img src="../assets/steps.png" alt="shoe soles" class="steps">
         <p class="data" id="dly-steps">2637 <br> OF 4000</p>
         <p>STEPS</p>
       </section>
       <section class="widget" id="daily-water">
-        <img src="" alt="water droplet" class="hydration">
+        <img src="../assets/water.png" alt="water droplet" class="hydration">
         <p class="data" id="dly-water">42oz</p>
         <p>CONSUMED</p>
       </section>
@@ -31,14 +31,14 @@
           <p class="data" id="">4</p>
           <p>SLEEP QUALITY</p>
         </div>
-        <img src="" alt="crescent moon and stars" class="sleep">
+        <img src="../assets/sleep.png" alt="crescent moon and stars" class="sleep">
         <p>RECOMMENDED:<br> 7-8 HRS <br> OF SLEEP*</p>
       </section>
       <section class="widget long" id="wkly-steps">
-        <img src="" alt="wk steps graph" class="steps">
+        <img src="../assets/steps.png" alt="wk steps graph" class="steps">
       </section>
       <section class="widget tall" id="friends-list">
-        <img src="" alt="two people highfiving" class="friends">
+        <img src="../assets/friends.png" alt="two people highfiving" class="friends">
         <ul>
           <li>FRIEND 1</li>
           <li>FRIEND 2</li>
@@ -47,7 +47,7 @@
       </section>
       <section class="widget" id="stairs">
         <div class="side">
-          <img src="" alt="staircase" class="steps">
+          <img src="../assets/stairs.png" alt="staircase" class="steps">
           <p class="data" id="record-flights">72</p>
           <p>FLIGHTS</p>
         </div>
@@ -57,7 +57,7 @@
         </div>
       </section>
       <section class="widget" id="min-active">
-        <img src="" alt="person running" class="activity">
+        <img src="../assets/running.png" alt="person running" class="activity">
         <p class="data" id="min-active">62</p>
         <p>MIN ACTIVE</p>
       </section>
@@ -65,9 +65,14 @@
         <img src="" alt="wk activity graph" class="activity">
       </section>
       <section class="widget" id="">
-        <img src="" alt="running shoe" class="step">
+        <img src="../assets/shoe.png" alt="running shoe" class="step">
         <p class="data" id="miles-walked">1.3</p>
         <p>MILES TODAY</p>
+      </section>
+      <section class="widget" id="">
+        <img src="../assets/shoe.png" alt="running shoe" class="step">
+        <p id="compare-step"></p>
+        <p>*DISCLAIMER* WE DO NOT ENCOURAGE COMPARING YOUR FITNESS JOURNEY TO ANOTHER USER'S!</p>
       </section>
       <section class="widget long" id="wkly-water">
         <img src="" alt="wk water graph" class="hydration">
@@ -86,6 +91,8 @@
     <script type="text/javascript" src="../data/hydration.js"></script>
     <script type="text/javascript" src="../data/sleep.js"></script>
     <script type="text/javascript" src="../data/activity.js"></script>
+    <script type="text/javascript" src="./UserRepository.js"></script>
+    <script type="text/javascript" src="./User.js"></script>
     <script type="text/javascript" src="./scripts.js"></script>
   </body>
 </html>
