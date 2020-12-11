@@ -1,8 +1,10 @@
 const allUsers = new UserRepository(userData);
 const currentUser = new User(allUsers.accessUser(6));
+const hydration = new Hydration(currentUser.id, hydrationData); 
 const greeting = document.querySelector('#greeting');
 const userInfo = document.querySelector('#user-info');
 const compareStep = document.querySelector('#compare-step');
+const dailyWater = document.querySelector('#dly-water');
 
 window.addEventListener('load', displayUserProfile);
 
@@ -10,6 +12,7 @@ function displayUserProfile() {
     displayGreeting();
     displayUserInfo();
     compareUserSteps();
+    displayDailyWater();
 };
 
 function displayGreeting() {
@@ -35,3 +38,7 @@ function compareUserSteps() {
     <p>${allUsers.findAllUserSteps()}</p>
     <p>AVERAGE COMMUNITY STEP GOAL</p>`
 };
+
+function displayDailyWater() {
+    dailyWater.innerText = `${hydration.findOuncesByDate(hydrationData[hydrationData.length-1].date)} OZ`;
+}
