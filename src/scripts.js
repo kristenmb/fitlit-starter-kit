@@ -5,6 +5,7 @@ const greeting = document.querySelector('#greeting');
 const userInfo = document.querySelector('#user-info');
 const compareStep = document.querySelector('#compare-step');
 const dailyWater = document.querySelector('#dly-water');
+const weeklyWater = document.querySelector('#weekly-water');
 
 window.addEventListener('load', displayUserProfile);
 
@@ -13,6 +14,7 @@ function displayUserProfile() {
     displayUserInfo();
     compareUserSteps();
     displayDailyWater();
+    displayWeeklyWater();
 };
 
 function displayGreeting() {
@@ -40,5 +42,15 @@ function compareUserSteps() {
 };
 
 function displayDailyWater() {
-    dailyWater.innerText = `${hydration.findOuncesByDate(hydrationData[hydrationData.length-1].date)} OZ`;
+    dailyWater.innerText = `${hydration.findOuncesByDate(hydration.data[hydration.data.length - 1].date)} OZ`;
+}
+
+function displayWeeklyWater() {
+    const weeklyWaterLog = hydration.createWeeklyHydrationLog(hydration.data[hydration.data.length - 7].date)
+    const dates = Object.keys(weeklyWaterLog);
+    const ounces = Object.values(weeklyWaterLog);
+    const waterList = dates.map((each, i) => each + ': ' + ounces[i]);
+    weeklyWater.innerHTML = `
+    <p>${waterList[0]} <br> ${waterList[1]} <br> ${waterList[2]} <br> ${waterList[3]}  <br> ${waterList[4]}
+    <br> ${waterList[5]}  <br> ${waterList[6]}</p>`;
 }
