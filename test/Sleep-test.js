@@ -86,13 +86,4 @@ describe('Sleep', () => {
             '2019/06/21': 4.2
           });
     });
-
-
 });
-
-
-// 6. User's sleep quality each day over the course of a week
-// Input: Array of sleep objects 
-// Output: Object with key's of the dates and the value's as the sleep quality
-// Methods: findIndex, slice, reduce
-//
