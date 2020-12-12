@@ -48,17 +48,16 @@ describe('Sleep', () => {
     });
 
     it('should be able to calculate the average number of hours slept of each day overall', () => {
-        expect(sleep.)
-    })
-})
+        expect(sleep.calcUserAvg('hoursSlept')).to.equal('8.1');
+    });
 
-// 1. average num hours leep each day overall
-// Input: Array of sleep objects for a user
-// Output: Number, average hours slept each day overall
-// Methods: Reduce
-// Sum all of the hours slept by using reduce 
-// Divide the total by number of days
-// calcUserAvgHours()
+    it('should be able to calculate the average sleep quality rating of each day overall', () => {
+        expect(sleep.calcUserAvg('sleepQuality')).to.equal('2.6');
+    });
+
+
+});
+
 // 
 // 2. Avergae sleep quality per day over all time
 // Input: Array of sleep objects for a user
