@@ -55,35 +55,42 @@ describe('Sleep', () => {
         expect(sleep.calcUserAvg('sleepQuality')).to.equal('2.6');
     });
 
+    it('should be able to find the hours the user slept on specific date', () => {
+        expect(sleep.findByDate('2019/06/18', 'hoursSlept')).to.equal(10.4);
+    });
+
+    it('should be able to find the quality of sleep on a specific date', () => {
+        expect(sleep.findByDate('2019/06/18', 'sleepQuality')).to.equal(3.1);
+    });
+
+    it('should return the hours slept each day over a week', () => {
+        expect(sleep.createWeeklySleepLog('2019/06/15', 'hoursSlept')).to.deep.equal({
+            '2019/06/15': 6.1,
+            '2019/06/16': 4.1,
+            '2019/06/17': 8,
+            '2019/06/18': 10.4,
+            '2019/06/19': 10.7,
+            '2019/06/20': 9.3,
+            '2019/06/21': 7.8
+          });
+    });
+
+    it('should return the sleep quality each day over a week', () => {
+        expect(sleep.createWeeklySleepLog('2019/06/15', 'sleepQuality')).to.deep.equal({
+            '2019/06/15': 2.2,
+            '2019/06/16': 3.8,
+            '2019/06/17': 2.6,
+            '2019/06/18': 3.1,
+            '2019/06/19': 1.2,
+            '2019/06/20': 1.2,
+            '2019/06/21': 4.2
+          });
+    });
+
 
 });
 
-// 
-// 2. Avergae sleep quality per day over all time
-// Input: Array of sleep objects for a user
-// Output: Number, average sleep quality overall
-// Methods: Reduce
-// Sum all the sleep quality property by using reduce
-// Divide the total by the number of days 
-// calcUserAvgQuality()
-//
-// 3. How many hours user slept specific day by date
-// Input: Array of sleep objects
-// Output: Number
-// Methods: Find
-// Find the hours slept by the date
-// 
-// 4. Sleep quality of user by specific day by date
-// Input: Array of sleep objects
-// Output: Number 
-// Methods: Find
-// FInd the sleep quality by a date
-// 
-// 5. USer's hours slept each day over the course of a week
-// Input: Array of sleep objects
-// Output: Object with keys of dates and values of hours slept
-// Methods: findIndex, slice, reduce
-// 
+
 // 6. User's sleep quality each day over the course of a week
 // Input: Array of sleep objects 
 // Output: Object with key's of the dates and the value's as the sleep quality
