@@ -11,6 +11,8 @@ const dailySleepHrs = document.querySelector('#hrs-slept');
 const dailySleepQlty = document.querySelector('#sleep-qlty');
 const weeklySleepLog = document.querySelector('#wkly-sleep');
 const weeklySleepQlty = document.querySelector('#wkly-qlty');
+const allTimeSleepAvg = document.querySelector('#all-time-sleep');
+const allTimeQltyAvg = document.querySelector('#all-time-quality');
 
 window.addEventListener('load', displayUserProfile);
 
@@ -24,6 +26,7 @@ function displayUserProfile() {
     displayDailySleepQuality();
     displayWeeklySleepLog('hoursSlept');
     displayWeeklySleepLog('sleepQuality');
+    displayAllTimeSleepInfo();
 };
 
 function displayGreeting() {
@@ -89,3 +92,8 @@ function displayWeeklySleepLog(property) {
       <br> ${sleepList[5]}  <br> ${sleepList[6]}</p>`;
     }
   }
+
+function displayAllTimeSleepInfo() {
+  allTimeSleepAvg.innerText = `${sleep.calcUserAvg('hoursSlept')}`;
+  allTimeQltyAvg.innerText = `${sleep.calcUserAvg('sleepQuality')}`;
+}
