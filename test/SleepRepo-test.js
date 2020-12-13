@@ -25,27 +25,17 @@ describe('SleepRepo', () => {
     });
 
     it('should find all users who average sleep quality greater than 3 for a specified week', () => {
-        expect(sleepRepo.findQualitySleepers()).to.deep.equal();
+        expect(sleepRepo.findQualitySleepers('2019/07/18')).to.deep.equal([
+            '1',  '4',  '5',  '6',  '7',
+            '9',  '10', '11', '14', '15',
+            '17', '18', '20', '21', '23',
+            '28', '29', '31', '33', '34',
+            '35', '36', '37', '38', '41',
+            '42', '44', '46', '47'
+          ]);
     });
 
+    it('should find user(s) who slept the most number of hours by date', () => {
+        expect(sleepRepo.findWellRestedUsers('2019/07/18')).to.deep.equal([{ userID: 24, date: '2019/07/18', hoursSlept: 10.9, sleepQuality: 2.2 }]);
+    });
 });
-
-
-// 
-// 2. Find all users who average a sleep quality greater
-// than 3 for a given week
-// Input: Array of sleep objects
-// Output: Array of user's 
-// Methods: findIndex, slice, reduce
-// Specific week as a parameter
-// Create a weekly sleep average log for all users 
-// Push the object of the user's id and average sleep quality
-// Filter those with an average above 3 
-// 
-// 3. By date find users who slept the most nmber of hours (one or more if they tied)
-// Input: Array of sleep objects
-// Output: The user(s) id or object
-// Methods:  Math.max.apply, reduce, sort
-// Reduce to add the user id's based on the user's with highest hoursSlept to array
-// sort all the highest hours slept to the fron of the array 
-// 
