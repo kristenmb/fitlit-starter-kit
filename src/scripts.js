@@ -1,11 +1,14 @@
 const allUsers = new UserRepository(userData);
 const currentUser = new User(allUsers.accessUser(6));
-const hydration = new Hydration(currentUser.id, hydrationData); 
+const hydration = new Hydration(currentUser.id, hydrationData);
+const sleep = new Sleep(currentUser.id, sleepData);
 const greeting = document.querySelector('#greeting');
 const userInfo = document.querySelector('#user-info');
 const compareStep = document.querySelector('#compare-step');
 const dailyWater = document.querySelector('#dly-water');
 const weeklyWater = document.querySelector('#weekly-water');
+const dailySleepHrs = document.querySelector('#hrs-slept');
+const dailySleepQlty = document.querySelector('#sleep-qlty');
 
 window.addEventListener('load', displayUserProfile);
 
@@ -15,6 +18,8 @@ function displayUserProfile() {
     compareUserSteps();
     displayDailyWater();
     displayWeeklyWater();
+    displayDailyHoursSlept();
+    displayDailySleepQuality();
 };
 
 function displayGreeting() {
@@ -53,4 +58,12 @@ function displayWeeklyWater() {
     weeklyWater.innerHTML = `
     <p>${waterList[0]} <br> ${waterList[1]} <br> ${waterList[2]} <br> ${waterList[3]}  <br> ${waterList[4]}
     <br> ${waterList[5]}  <br> ${waterList[6]}</p>`;
+}
+
+function displayDailyHoursSlept() {
+  dailySleepHrs.innerText = `${sleep.findByDate((sleep.data[sleep.data.length - 1].date), 'hoursSlept')}`
+}
+
+function displayDailySleepQuality() {
+  dailySleepQlty.innerText = `${sleep.findByDate((sleep.data[sleep.data.length - 1].date), 'sleepQuality')}`
 }
