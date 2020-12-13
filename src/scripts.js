@@ -9,6 +9,8 @@ const dailyWater = document.querySelector('#dly-water');
 const weeklyWater = document.querySelector('#weekly-water');
 const dailySleepHrs = document.querySelector('#hrs-slept');
 const dailySleepQlty = document.querySelector('#sleep-qlty');
+const weeklySleepLog = document.querySelector('#wkly-sleep');
+const weeklySleepQlty = document.querySelector('#wkly-qlty');
 
 window.addEventListener('load', displayUserProfile);
 
@@ -20,6 +22,8 @@ function displayUserProfile() {
     displayWeeklyWater();
     displayDailyHoursSlept();
     displayDailySleepQuality();
+    displayWeeklySleepLog('hoursSlept');
+    displayWeeklySleepLog('sleepQuality');
 };
 
 function displayGreeting() {
@@ -67,3 +71,21 @@ function displayDailyHoursSlept() {
 function displayDailySleepQuality() {
   dailySleepQlty.innerText = `${sleep.findByDate((sleep.data[sleep.data.length - 1].date), 'sleepQuality')}`
 }
+
+function displayWeeklySleepLog(property) {
+  const weeklySleep = sleep.createWeeklySleepLog(sleep.data[sleep.data.length - 7].date, property);
+  const dates = Object.keys(weeklySleep);
+  const values = Object.values(weeklySleep);
+  const sleepList = dates.map((each, i) => each + ': ' + values[i]);
+  if (property === 'hoursSlept') {
+    weeklySleepLog.innerHTML = `
+      <p>WEEKLY HRS SLEPT</p>
+      <p>${sleepList[0]} <br> ${sleepList[1]} <br> ${sleepList[2]} <br> ${sleepList[3]}  <br> ${sleepList[4]}
+      <br> ${sleepList[5]}  <br> ${sleepList[6]}</p>`;
+  } else {
+    weeklySleepQlty.innerHTML = `
+      <p>WEEKLY SLEEP QUALITY</p>
+      <p>${sleepList[0]} <br> ${sleepList[1]} <br> ${sleepList[2]} <br> ${sleepList[3]}  <br> ${sleepList[4]}
+      <br> ${sleepList[5]}  <br> ${sleepList[6]}</p>`;
+    }
+  }
