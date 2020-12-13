@@ -36,6 +36,28 @@ describe('SleepRepo', () => {
     });
 
     it('should find user(s) who slept the most number of hours by date', () => {
-        expect(sleepRepo.findWellRestedUsers('2019/07/18')).to.deep.equal([{ userID: 24, date: '2019/07/18', hoursSlept: 10.9, sleepQuality: 2.2 }]);
+        expect(sleepRepo.findWellRestedUsers('2019/07/18')).to.deep.equal([
+            {
+              userID: 24,
+              date: '2019/07/18',
+              hoursSlept: 10.9,
+              sleepQuality: 2.2
+            }
+          ]);
+        expect(sleepRepo.findWellRestedUsers('2019/07/25')).to.deep.equal([
+            {
+              userID: 22,
+              date: '2019/07/25',
+              hoursSlept: 10.9,
+              sleepQuality: 4.6
+            },
+            {
+              userID: 26,
+              date: '2019/07/25',
+              hoursSlept: 10.9,
+              sleepQuality: 3.4
+            }
+          ]);
+
     });
 });
