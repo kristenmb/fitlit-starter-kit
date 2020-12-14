@@ -26,9 +26,9 @@
       </section>
       <section class="widget long" id="sleep-hrs">
         <div class="stacked">
-          <p class="data" id="">5</p>
+          <p class="data" id="hrs-slept">5</p>
           <p>HOURS SLEPT</p>
-          <p class="data" id="">4</p>
+          <p class="data" id="sleep-qlty">4</p>
           <p>SLEEP QUALITY</p>
         </div>
         <img src="../newassets/sleep.png" alt="crescent moon and stars" class="sleep">
@@ -52,7 +52,7 @@
           <p>FLIGHTS</p>
         </div>
         <div class="side">
-          <img src="" alt="trophy" class="award">
+          <!-- <img src="" alt="trophy" class="award"> -->
           <p>YOUR ALL TIME STAIR CLIMBING RECORD!</p>
         </div>
       </section>
@@ -62,7 +62,7 @@
         <p>MIN ACTIVE</p>
       </section>
       <section class="widget" id="wkly-min-active">
-        <img src="" alt="wk activity graph" class="activity">
+        <img src="../newassets/running.png" alt="wk activity graph" class="activity">
       </section>
       <section class="widget" id="">
         <img src="../newassets/shoe.png" alt="running shoe" class="step">
@@ -75,17 +75,26 @@
         <p>*DISCLAIMER* WE DO NOT ENCOURAGE COMPARING YOUR FITNESS JOURNEY TO ANOTHER USER'S!</p>
       </section>
       <section class="widget long" id="wkly-water">
-        <img src="" alt="wk water graph" class="hydration">
+        <img src="../newassets/water.png" alt="wk water graph" class="hydration">
         <p class="data" id="weekly-water"></p>
       </section>
       <section class="widget long" id="wkly-stairs">
-        <img src="" alt="wk flights graph" class="steps">
+        <img src="../newassets/shoe.png" alt="wk flights graph" class="steps">
       </section>
       <section class="widget long" id="wkly-sleep-stats">
-        <img src="" alt="wk sleepstats graph" class="sleep">
+        <p class="data" id="wkly-sleep"></p>
+        <img src="../newassets/sleep.png" alt="wk sleepstats graph" class="sleep">
+        <p class="data" id="wkly-qlty"></p>
       </section>
-      <section class="widget long" id="total-sleep-stats">
-        <img src="" alt="alltime sleepstats graph" class="sleep">
+      <section class="widget long stacked" id="total-sleep-stats">
+        <p>ALL TIME AVERAGE SLEEP STATS</p>
+        <div class="side">
+          <p class="data" id="all-time-sleep"></p>
+          <p>HRS</p>
+          <img src="../newassets/sleep.png" alt="alltime sleepstats graph" class="sleep">
+          <p class="data" id="all-time-quality"></p>
+          <p>QLTY</p>
+        </div>
       </section>
     </div>
     <script type="text/javascript" src="../data/users.js"></script>
@@ -95,6 +104,8 @@
     <script type="text/javascript" src="./UserRepository.js"></script>
     <script type="text/javascript" src="./User.js"></script>
     <script type="text/javascript" src="./Hydration.js"></script>
+    <script type="text/javascript" src="./Sleep.js"></script>
+    <script type="text/javascript" src="./SleepRepo.js"></script>
     <script type="text/javascript" src="./scripts.js"></script>
   </body>
 </html>

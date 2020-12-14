@@ -1,5 +1,5 @@
 * {
-  border: solid 2px pink;
+  /* border: solid 2px pink; */
   font-family: 'Hind Siliguri', sans-serif;
   color: white;
 }
@@ -44,6 +44,7 @@ p {
 .extra-long {
   grid-column: span 4;
 }
+
 .long {
   grid-column: span 2;
   flex-direction: row;
