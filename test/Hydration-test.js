@@ -2,48 +2,12 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Hydration = require('../src/Hydration');
+const hydrationData = require('./test-data/hydration-data');
 
 describe('Hydration', () => {
   let hydration;
-  let hydrationData;
 
   beforeEach((done) => {
-    hydrationData = [
-      {
-        userID: 5,
-        date: '2019/06/15',
-        numOunces: 42
-      },
-      {
-        userID: 5,
-        date: '2019/06/16',
-        numOunces: 79
-      },
-      {
-        userID: 5,
-        date: '2019/06/17',
-        numOunces: 99
-      },
-      {
-        userID: 5,
-        date: '2019/06/18',
-        numOunces: 39
-      },
-      {
-        userID: 5,
-        date: '2019/06/19',
-        numOunces: 69
-      },
-      {
-        userID: 5,
-        date: '2019/06/20',
-        numOunces: 89
-      },
-      {
-        userID: 5,
-        date: '2019/06/21',
-        numOunces: 73
-      }];
     hydration = new Hydration(5, hydrationData);
     done();
   });

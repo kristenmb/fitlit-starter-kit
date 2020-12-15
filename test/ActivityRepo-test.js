@@ -2,13 +2,13 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const ActivityRepo = require('../src/ActivityRepo');
-const activityData = require('../data/activity');
+const {activityRepoData} = require('./test-data/activity-data');
 
 describe('ActivityRepo', () => {
   let activityRepo;
 
   beforeEach((done) => {
-    activityRepo = new ActivityRepo(activityData)
+    activityRepo = new ActivityRepo(activityRepoData)
     done();
   });
 
@@ -17,7 +17,7 @@ describe('ActivityRepo', () => {
   });
 
   it('should take in activity data', () => {
-    expect(activityRepo.data).to.deep.equal(activityData);
+    expect(activityRepo.data).to.deep.equal(activityRepoData);
   });
 
   it('should be able to find average number of stairs climbed for all users on a specific day', () => {
