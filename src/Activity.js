@@ -2,7 +2,7 @@ class Activity {
     constructor(user, data) {
         this.user = user;
         this.id = user.id;
-        this.data = data;
+        this.data = data.filter(item => item.userID === this.id);
     }
 
     findMilesWalked(user, date) {

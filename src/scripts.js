@@ -2,6 +2,7 @@ const allUsers = new UserRepository(userData);
 const currentUser = new User(allUsers.accessUser(6));
 const hydration = new Hydration(currentUser.id, hydrationData);
 const sleep = new Sleep(currentUser.id, sleepData);
+const activity = new Activity(currentUser, activityData);
 const greeting = document.querySelector('#greeting');
 const userInfo = document.querySelector('#user-info');
 const compareStep = document.querySelector('#compare-step');
@@ -13,6 +14,9 @@ const weeklySleepLog = document.querySelector('#wkly-sleep');
 const weeklySleepQlty = document.querySelector('#wkly-qlty');
 const allTimeSleepAvg = document.querySelector('#all-time-sleep');
 const allTimeQltyAvg = document.querySelector('#all-time-quality');
+const dailySteps = document.querySelector('#dly-steps');
+const minutesActive = document.querySelector('#min-active');
+const milesWalked = document.querySelector('#miles-walked');
 
 window.addEventListener('load', displayUserProfile);
 
@@ -27,6 +31,9 @@ function displayUserProfile() {
     displayWeeklySleepLog('hoursSlept');
     displayWeeklySleepLog('sleepQuality');
     displayAllTimeSleepInfo();
+    displayDailySteps();
+    displayActiveMins();
+    displayMilesWalked();
 };
 
 function displayGreeting() {
@@ -96,4 +103,17 @@ function displayWeeklySleepLog(property) {
 function displayAllTimeSleepInfo() {
   allTimeSleepAvg.innerText = `${sleep.calcUserAvg('hoursSlept')}`;
   allTimeQltyAvg.innerText = `${sleep.calcUserAvg('sleepQuality')}`;
+}
+
+function displayDailySteps() {
+  dailySteps.innerText = `${activity.data[activity.data.length - 1].numSteps}
+  OF ${currentUser.dailyStepGoal}`;
+}
+
+function displayActiveMins() {
+  minutesActive.innerText = `${activity.data[activity.data.length - 1].minutesActive}`;
+}
+
+function displayMilesWalked() {
+  milesWalked.innerText = `${activity.findMilesWalked(currentUser, activity.data[activity.data.length - 1].date)}`;
 }
