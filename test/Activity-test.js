@@ -103,24 +103,17 @@ describe('Activity', () => {
         expect(activity.findMilesWalked(user, '2019/07/14')).to.equal('5.4');
     });
 
+    it('should return user\'s minutes active for a specific day', () => {
+        expect(activity.findMinsActive('2019/07/14')).to.equal(103);
+    });
+
+    it('should return average minutes active for a given week', () => {
+        expect(activity.findWeeklyAvgMins('2019/07/09')).to.equal('167');
+    });
+
     
 
 
-    
-    // 2. How many minutes active for a specific day
-    // Input: Array of activity objects
-    // Output: A number (minutes)
-    // Methods: Find
-    // Find the object by the specific date
-    // return the objects minsActive property
-    // 
-    // 3. How many minutes active did they average for a given week
-    // Input: Array of activity objects
-    // Output: A number (average of minsActive)
-    // Methods: Reduce
-    // Sum the minsActive for a given week
-    // Divide by 7 
-    // 
     // 4. Did the user reach their step goal for a given day 
     // Input: Array of activity objects
     // output: Boolean 
