@@ -1,5 +1,5 @@
 const chai = require('chai');
-const expect =chai.expect;
+const expect = chai.expect;
 
 const Sleep = require('../src/Sleep');
 
