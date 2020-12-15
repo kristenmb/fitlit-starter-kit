@@ -21,31 +21,37 @@ const milesWalked = document.querySelector('#miles-walked');
 const compareDailySteps = document.querySelector('#compare-avg-steps');
 const compareActivityMinutes = document.querySelector('#compare-avg-min');
 const compareFlights = document.querySelector('#compare-avg-flights');
+const weeklySteps = document.querySelector('#wkly-steps');
+const weeklyFlights = document.querySelector('#wkly-flights');
+const weeklyMinActive = document.querySelector('#wkly-min-active')
 
 window.addEventListener('load', displayUserProfile);
 
 function displayUserProfile() {
-    displayGreeting();
-    displayUserInfo();
-    displayDailyWater();
-    displayWeeklyWater();
-    displayDailyHoursSlept();
-    displayDailySleepQuality();
-    displayWeeklySleepLog('hoursSlept');
-    displayWeeklySleepLog('sleepQuality');
-    displayAllTimeSleepInfo();
-    displayDailySteps();
-    displayActiveMins();
-    displayMilesWalked();
-    displayCommunityAvg();
+  displayGreeting();
+  displayUserInfo();
+  displayDailyWater();
+  displayWeeklyWater();
+  displayDailyHoursSlept();
+  displayDailySleepQuality();
+  displayWeeklySleepLog('hoursSlept');
+  displayWeeklySleepLog('sleepQuality');
+  displayAllTimeSleepInfo();
+  displayDailySteps();
+  displayActiveMins();
+  displayMilesWalked();
+  displayCommunityAvg();
+  displayWeeklyStepLog('numSteps');
+  displayWeeklyStepLog('flightsOfStairs');
+  displayWeeklyStepLog('minutesActive');
 };
 
 function displayGreeting() {
-    greeting.innerText = `Welcome, ${currentUser.accessUserName()}`;
+  greeting.innerText = `Welcome, ${currentUser.accessUserName()}`;
 };
 
 function displayUserInfo() {
-    userInfo.innerHTML = `
+  userInfo.innerHTML = `
         <div class="side">
             <p>${currentUser.address}</p>
             <p>${currentUser.email}</p>
@@ -57,15 +63,15 @@ function displayUserInfo() {
 };
 
 function displayDailyWater() {
-    dailyWater.innerText = `${hydration.findOuncesByDate(hydration.data[hydration.data.length - 1].date)} OZ`;
+  dailyWater.innerText = `${hydration.findOuncesByDate(hydration.data[hydration.data.length - 1].date)} OZ`;
 }
 
 function displayWeeklyWater() {
-    const weeklyWaterLog = hydration.createWeeklyHydrationLog(hydration.data[hydration.data.length - 7].date)
-    const dates = Object.keys(weeklyWaterLog);
-    const ounces = Object.values(weeklyWaterLog);
-    const waterList = dates.map((each, i) => each + ': ' + ounces[i]);
-    weeklyWater.innerHTML = `
+  const weeklyWaterLog = hydration.createWeeklyHydrationLog(hydration.data[hydration.data.length - 7].date)
+  const dates = Object.keys(weeklyWaterLog);
+  const ounces = Object.values(weeklyWaterLog);
+  const waterList = dates.map((each, i) => each + ': ' + ounces[i]);
+  weeklyWater.innerHTML = `
     <p>${waterList[0]} <br> ${waterList[1]} <br> ${waterList[2]} <br> ${waterList[3]}  <br> ${waterList[4]}
     <br> ${waterList[5]}  <br> ${waterList[6]}</p>`;
 }
@@ -93,8 +99,8 @@ function displayWeeklySleepLog(property) {
       <p>WEEKLY SLEEP QUALITY</p>
       <p>${sleepList[0]} <br> ${sleepList[1]} <br> ${sleepList[2]} <br> ${sleepList[3]}  <br> ${sleepList[4]}
       <br> ${sleepList[5]}  <br> ${sleepList[6]}</p>`;
-    }
   }
+}
 
 function displayAllTimeSleepInfo() {
   allTimeSleepAvg.innerText = `${sleep.calcUserAvg('hoursSlept')}`;
@@ -122,4 +128,27 @@ function displayCommunityAvg() {
   compareActivityMinutes.innerText = `${activityRepo.findDailyAvg('minutesActive', activityRepo.data[activityRepo.data.length - 1].date)}`;
 
   compareFlights.innerText = `${activityRepo.findDailyAvg('flightsOfStairs', activityRepo.data[activityRepo.data.length - 1].date)}`;
+}
+
+function displayWeeklyStepLog(property) {
+  const weeklyActive = activity.createWeeklyActivityLog(activity.data[activity.data.length - 7].date, property);
+  const dates = Object.keys(weeklyActive);
+  const values = Object.values(weeklyActive);
+  const activityList = dates.map((each, i) => each + ': ' + values[i]);
+  if (property === 'numSteps') {
+    weeklySteps.innerHTML = `
+      <p>WEEKLY STEPS</p>
+      <p>${activityList[0]} <br> ${activityList[1]} <br> ${activityList[2]} <br> ${activityList[3]}  <br> ${activityList[4]}
+      <br> ${activityList[5]}  <br> ${activityList[6]}</p>`;
+  } else if (property === 'flightsOfStairs') {
+    weeklyFlights.innerHTML = `
+      <p>WEEKLY FLIGHTS OF STAIRS</p>
+      <p>${activityList[0]} <br> ${activityList[1]} <br> ${activityList[2]} <br> ${activityList[3]}  <br> ${activityList[4]}
+      <br> ${activityList[5]}  <br> ${activityList[6]}</p>`;
+  } else {
+    weeklyMinActive.innerHTML = `
+      <p>WEEKLY FLIGHTS OF STAIRS</p>
+      <p>${activityList[0]} <br> ${activityList[1]} <br> ${activityList[2]} <br> ${activityList[3]}  <br> ${activityList[4]}
+      <br> ${activityList[5]}  <br> ${activityList[6]}</p>`;
+  }
 }
