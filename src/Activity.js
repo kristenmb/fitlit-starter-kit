@@ -24,6 +24,24 @@ class Activity {
         }, 0)
         return weeklyAvg.toFixed(0);
     }
+
+    assessStepGoal(date) {
+       const findDate = this.data.find(item => item.date === date);
+        if (findDate.numSteps >= this.user.dailyStepGoal) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    findStepExcess() {
+        return this.data.filter(day => day.numSteps > this.user.dailyStepGoal);
+    }
+
+    findStairRecord() {
+        const sortedData = this.data.sort((a, b) => b.flightsOfStairs - a.flightsOfStairs);
+        return sortedData[0];
+    }
 };
 
 if (typeof module !== 'undefined') {

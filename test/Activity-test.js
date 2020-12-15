@@ -110,29 +110,31 @@ describe('Activity', () => {
     it('should return average minutes active for a given week', () => {
         expect(activity.findWeeklyAvgMins('2019/07/09')).to.equal('167');
     });
-
     
+    it('should return whether the user has reached their step goal for the give day or not', () => {
+        expect(activity.assessStepGoal('2019/07/12')).to.equal(true);
+        expect(activity.assessStepGoal('2019/07/16')).to.equal(false);
+    });
 
+    it('should find all the day the user exceeded their step goal', () => {
+        expect(activity.findStepExcess()).to.deep.equal([
+              {
+                "date": "2019/07/12",
+                "flightsOfStairs": 3,
+                "minutesActive": 268,
+                "numSteps": 14754,
+                "userID": 14
+              }
+            ]);
+    });
 
-    // 4. Did the user reach their step goal for a given day 
-    // Input: Array of activity objects
-    // output: Boolean 
-    // Compare to userData and stepGoal
-    // Are their steps greater than or equal to the step goal??
-    //
-    // 5. Find all the days they exceeded their step goal
-    // Input: Array of activity objects 
-    // Output: Array of days 
-    // Methods: Filter
-    // Filter the array and find the days that are greater than the 
-    // step goal
-    //
-    // 6. Find their all time stair climbing record
-    // Input: Array of activity objects
-    // Output: A number (flightsOfStairs)
-    // Methods: Sort
-    // Sort the array by flightsOfStairs value 
-    // from b - a (highest to lowest) 
-    // return the first index
-    
+    it('should find a user\'s all-time stair climbing record', () => {
+        expect(activity.findStairRecord()).to.deep.equal({
+            userID: 14,
+            date: '2019/07/09',
+            numSteps: 2478,
+            minutesActive: 149,
+            flightsOfStairs: 41
+          });
+    });
 });
