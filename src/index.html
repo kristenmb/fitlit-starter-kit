@@ -102,8 +102,10 @@
         </div>
       </section>
       <section class="widget long" id="wkly-water">
-        <img src="../newassets/water.png" alt="wk water graph" class="hydration">
-        <p class="data" id="weekly-water"></p>
+        <div class="stacked">
+          <p class="data">WEEKLY WATER</p>
+          <canvas class="graph" id="wkly-water-graph"></canvas>
+        </div>
       </section>
       <section class="widget long">
         <div class="stacked">
@@ -111,10 +113,17 @@
           <canvas class="graph" id="wkly-mins-active-graph"></canvas>
         </div>
       </section>
-      <section class="widget long" id="wkly-sleep-stats">
-        <p class="data" id="wkly-sleep"></p>
-        <img src="../newassets/sleep.png" alt="wk sleepstats graph" class="sleep">
-        <p class="data" id="wkly-qlty"></p>
+      <section class="widget long" id="wkly-hrs-slept">
+        <div class="stacked">
+          <p class="data">WEEKLY HOURS</p>
+          <canvas class="graph" id="wkly-hrs-graph"></canvas>
+        </div>
+      </section>
+      <section class="widget long" id="wkly-qlty">
+        <div>
+          <p class="data">WEEKLY QUALITY</p>
+          <canvas class="graph" id="wkly-qlty-graph"></canvas>
+        </div>
       </section>
       <section class="widget long stacked" id="total-sleep-stats">
         <p>ALL TIME AVERAGE SLEEP STATS</p>
