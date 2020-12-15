@@ -2,13 +2,13 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const SleepRepo = require('../src/SleepRepo');
-const sleepData = require('../data/sleep');
+const {sleepRepoData} = require('./test-data/sleep-data');
 
 describe('SleepRepo', () => {
     let sleepRepo;
 
     beforeEach((done) => {
-        sleepRepo = new SleepRepo(sleepData);
+        sleepRepo = new SleepRepo(sleepRepoData);
         done();
     });
 
@@ -17,7 +17,7 @@ describe('SleepRepo', () => {
     });
 
     it('should take in the sleep data', () => {
-        expect(sleepRepo.data).to.deep.equal(sleepData);
+        expect(sleepRepo.data).to.deep.equal(sleepRepoData);
     });
 
     it('should be able to find all users average sleep quality', () => {
