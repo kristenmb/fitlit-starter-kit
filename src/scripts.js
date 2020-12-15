@@ -23,7 +23,21 @@ const compareActivityMinutes = document.querySelector('#compare-avg-min');
 const compareFlights = document.querySelector('#compare-avg-flights');
 const weeklySteps = document.querySelector('#wkly-steps');
 const weeklyFlights = document.querySelector('#wkly-flights');
-const weeklyMinActive = document.querySelector('#wkly-min-active')
+const weeklyMinActive = document.querySelector('#wkly-min-active');
+
+// const weeklyStepsGraph = document.querySelector('#wkly-step-graph');
+// const chart = new Chart(weeklyStepsGraph, {
+//     type: 'line',
+//     data: {
+//     labels: Object.keys(activity.createWeeklyActivityLog(activity.data[activity.data.length - 7].date, 'numSteps')),
+//     datasets: [{
+//         label: 'Weekly Step Graph',
+//         borderColor: 'rgb(1, 255, 0)',
+//         data: Object.values(activity.createWeeklyActivityLog(activity.data[activity.data.length - 7].date, 'numSteps'))
+//       }]
+//     },
+//   options: {}
+// });
 
 window.addEventListener('load', displayUserProfile);
 
@@ -41,8 +55,8 @@ function displayUserProfile() {
   displayActiveMins();
   displayMilesWalked();
   displayCommunityAvg();
-  displayWeeklyStepLog('numSteps');
-  displayWeeklyStepLog('flightsOfStairs');
+  // displayWeeklyStepLog('numSteps');
+  // displayWeeklyStepLog('flightsOfStairs');
   displayWeeklyStepLog('minutesActive');
 };
 
@@ -147,7 +161,7 @@ function displayWeeklyStepLog(property) {
       <br> ${activityList[5]}  <br> ${activityList[6]}</p>`;
   } else {
     weeklyMinActive.innerHTML = `
-      <p>WEEKLY FLIGHTS OF STAIRS</p>
+      <p>WEEKLY MINUTES ACTIVE</p>
       <p>${activityList[0]} <br> ${activityList[1]} <br> ${activityList[2]} <br> ${activityList[3]}  <br> ${activityList[4]}
       <br> ${activityList[5]}  <br> ${activityList[6]}</p>`;
   }

@@ -35,12 +35,16 @@
         <p>RECOMMENDED:<br> 7-8 HRS <br> OF SLEEP*</p>
       </section>
       <section class="widget long">
-        <img src="../newassets/steps.png" alt="wk steps graph" class="steps">
-        <p class="data" id="wkly-steps"></p>
+        <div class="stacked">
+          <p class="data" id="wkly-steps">WEEKLY STEPS</p>
+          <canvas class="graph" id="wkly-step-graph"></canvas>
+        </div>
       </section>
       <section class="widget long">
-        <img src="../newassets/steps.png" alt="wk flights graph" class="steps">
-        <p class="data" id="wkly-flights"></p>
+        <div class="stacked">
+          <p class="data" id="wkly-flights">WEEKLY FLIGHTS CLIMBED</p>
+          <canvas class="graph" id="wkly-flights-graph"></canvas>
+        </div>
       </section>
       <section class="widget tall" id="friends-list">
         <img src="../newassets/friends1.png" alt="two purple people highfiving" class="friends">
@@ -102,8 +106,10 @@
         <p class="data" id="weekly-water"></p>
       </section>
       <section class="widget long">
-        <img src="../newassets/shoe.png" alt="wk min active graph" class="steps">
-        <p id="wkly-min-active"></p>
+        <div class="stacked">
+          <p>WEEKLY MINUTES ACTIVE</p>
+          <canvas class="graph" id="wkly-mins-active-graph"></canvas>
+        </div>
       </section>
       <section class="widget long" id="wkly-sleep-stats">
         <p class="data" id="wkly-sleep"></p>
@@ -132,6 +138,8 @@
     <script type="text/javascript" src="./SleepRepo.js"></script>
     <script type="text/javascript" src="./Activity.js"></script>
     <script type="text/javascript" src="./ActivityRepo.js"></script>
+    <script type="text/javascript" src="./Charts.js"></script>
+    <script type="text/javascript" src="./chart-style.js"></script>
     <script type="text/javascript" src="./scripts.js"></script>
   </body>
 </html>
