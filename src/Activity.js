@@ -2,7 +2,7 @@ class Activity {
     constructor(user, data) {
         this.user = user;
         this.id = user.id;
-        this.data = data;
+        this.data = data.filter(item => item.userID === this.id);
     }
 
     findMilesWalked(user, date) {
@@ -42,6 +42,16 @@ class Activity {
         const sortedData = this.data.sort((a, b) => b.flightsOfStairs - a.flightsOfStairs);
         return sortedData[0];
     }
+
+    createWeeklyActivityLog(date, property) {
+        const index = this.data.findIndex(item => item.date === date);
+        const weeklyData = this.data.slice(index, index + 7);
+        const weeklyLog = weeklyData.reduce((week, day) => {
+            week[day.date] = day[property];
+            return week;
+          }, {});
+        return weeklyLog;
+    };
 };
 
 if (typeof module !== 'undefined') {
