@@ -34,13 +34,13 @@ describe('Hydration', () => {
 
   it('should return the fluid ounces consumed for each day over a week', () => {
     expect(hydration.createWeeklyHydrationLog('2019/06/15')).to.deep.equal({
-  '2019/06/15': 42,
-  '2019/06/16': 79,
-  '2019/06/17': 99,
-  '2019/06/18': 39,
-  '2019/06/19': 69,
-  '2019/06/20': 89,
-  '2019/06/21': 73
+      'Jun 15, 2019': 42,
+      'Jun 16, 2019': 79,
+      'Jun 17, 2019': 99,
+      'Jun 18, 2019': 39,
+      'Jun 19, 2019': 69,
+      'Jun 20, 2019': 89,
+      'Jun 21, 2019': 73
     });
   });
 });

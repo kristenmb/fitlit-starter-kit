@@ -1,4 +1,7 @@
-const moment = require('../src/Moment');
+if (typeof require !== 'undefined') {  
+    var moment = require('../src/Moment'); 
+}
+
 class Activity {
     constructor(user, data) {
         this.user = user;

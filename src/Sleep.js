@@ -1,3 +1,7 @@
+if (typeof require !== 'undefined') {  
+    var moment = require('../src/Moment'); 
+}
+
 class Sleep {
     constructor(idNum, data) {
         this.id = idNum;
@@ -22,7 +26,8 @@ class Sleep {
         const index = this.data.findIndex(item => item.date === date);
         const weeklyData = this.data.slice(index, index + 7);
         const weeklySleepLog = weeklyData.reduce((week, day) => {
-            week[day.date] = day[property];
+            let newDate = moment(day.date).format('ll');
+            week[newDate] = day[property];
             return week;
           }, {});
         return weeklySleepLog;

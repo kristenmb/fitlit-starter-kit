@@ -41,25 +41,25 @@ describe('Sleep', () => {
 
     it('should return the hours slept each day over a week', () => {
         expect(sleep.createWeeklySleepLog('2019/06/15', 'hoursSlept')).to.deep.equal({
-            '2019/06/15': 6.1,
-            '2019/06/16': 4.1,
-            '2019/06/17': 8,
-            '2019/06/18': 10.4,
-            '2019/06/19': 10.7,
-            '2019/06/20': 9.3,
-            '2019/06/21': 7.8
+            'Jun 15, 2019': 6.1,
+            'Jun 16, 2019': 4.1,
+            'Jun 17, 2019': 8,
+            'Jun 18, 2019': 10.4,
+            'Jun 19, 2019': 10.7,
+            'Jun 20, 2019': 9.3,
+            'Jun 21, 2019': 7.8
           });
     });
 
     it('should return the sleep quality each day over a week', () => {
         expect(sleep.createWeeklySleepLog('2019/06/15', 'sleepQuality')).to.deep.equal({
-            '2019/06/15': 2.2,
-            '2019/06/16': 3.8,
-            '2019/06/17': 2.6,
-            '2019/06/18': 3.1,
-            '2019/06/19': 1.2,
-            '2019/06/20': 1.2,
-            '2019/06/21': 4.2
+            'Jun 15, 2019': 2.2,
+            'Jun 16, 2019': 3.8,
+            'Jun 17, 2019': 2.6,
+            'Jun 18, 2019': 3.1,
+            'Jun 19, 2019': 1.2,
+            'Jun 20, 2019': 1.2,
+            'Jun 21, 2019': 4.2
           });
     });
 });

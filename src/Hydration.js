@@ -1,3 +1,7 @@
+if (typeof require !== 'undefined') {  
+  var moment = require('../src/Moment'); 
+}
+
 class Hydration {
   constructor(id, data) {
     this.id = id;
@@ -22,7 +26,8 @@ class Hydration {
     const index = this.data.findIndex(item => item.date === date);
     const weeklyData = this.data.slice(index, index + 7);
     const weeklyOunceLog = weeklyData.reduce((hydrationLog, day) => {
-      hydrationLog[day.date] = day.numOunces;
+      let newDate = moment(day.date).format('ll');
+      hydrationLog[newDate] = day.numOunces;
       return hydrationLog;
     }, {});
     return weeklyOunceLog;
