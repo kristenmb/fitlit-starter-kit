@@ -134,7 +134,8 @@ const userData = [
     "dailyStepGoal": 3000,
     "friends": [
       40,
-      33
+      33,
+      50
     ]
   },
   {
@@ -146,7 +147,8 @@ const userData = [
     "dailyStepGoal": 9000,
     "friends": [
       15,
-      19
+      19,
+      31
     ]
   },
   {
@@ -187,7 +189,8 @@ const userData = [
     "dailyStepGoal": 12000,
     "friends": [
       34,
-      22
+      22,
+      25
     ]
   },
   {
@@ -241,7 +244,8 @@ const userData = [
     "dailyStepGoal": 2000,
     "friends": [
       33,
-      37
+      37,
+      46
     ]
   },
   {
@@ -281,7 +285,8 @@ const userData = [
     "dailyStepGoal": 9000,
     "friends": [
       29,
-      19
+      19,
+      7
     ]
   },
   {
@@ -428,7 +433,8 @@ const userData = [
     "dailyStepGoal": 3000,
     "friends": [
       47,
-      33
+      33,
+      14
     ]
   },
   {
