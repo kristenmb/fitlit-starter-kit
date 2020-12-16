@@ -50,13 +50,15 @@ describe('Activity', () => {
       });
 
       it('should find all the day the user exceeded their step goal', () => {
-        expect(activity.findStepExcess()).to.deep.equal([{
-          "date": "2019/07/12",
-          "flightsOfStairs": 3,
-          "minutesActive": 268,
-          "numSteps": 14754,
-          "userID": 14
-        }]);
+        expect(activity.findStepExcess()).to.deep.equal([
+          {
+            userID: 14,
+            date: '2019/07/12',
+            numSteps: 14754,
+            minutesActive: 268,
+            flightsOfStairs: 3
+          }
+        ]);
       });
 
       it('should find a user\'s all-time stair climbing record', () => {
@@ -71,37 +73,37 @@ describe('Activity', () => {
 
       it('should be able to return the step count for each day over a week', () => {
         expect(activity.createWeeklyActivityLog('2019/07/09', 'numSteps')).to.deep.equal({
-          '2019/07/09': 2478,
-          '2019/07/10': 8378,
-          '2019/07/11': 5579,
-          '2019/07/12': 14754,
-          '2019/07/13': 4913,
-          '2019/07/14': 8090,
-          '2019/07/15': 5550
+          'Jul 9, 2019': 2478,
+          'Jul 10, 2019': 8378,
+          'Jul 11, 2019': 5579,
+          'Jul 12, 2019': 14754,
+          'Jul 13, 2019': 4913,
+          'Jul 14, 2019': 8090,
+          'Jul 15, 2019': 5550
         });
       });
 
       it('should be able to return the flights of stairs climbed for each day over a week', () => {
           expect(activity.createWeeklyActivityLog('2019/07/09', 'flightsOfStairs')).to.deep.equal({
-              '2019/07/09': 41,
-              '2019/07/10': 39,
-              '2019/07/11': 5,
-              '2019/07/12': 3,
-              '2019/07/13': 7,
-              '2019/07/14': 9,
-              '2019/07/15': 26
-            });
+            'Jul 9, 2019': 41,
+            'Jul 10, 2019': 39,
+            'Jul 11, 2019': 5,
+            'Jul 12, 2019': 3,
+            'Jul 13, 2019': 7,
+            'Jul 14, 2019': 9,
+            'Jul 15, 2019': 26
+          });
           });
 
         it('should be able to return the minutes active for each day over a week', () => {
           expect(activity.createWeeklyActivityLog('2019/07/09', 'minutesActive')).to.deep.equal({
-            '2019/07/09': 149,
-            '2019/07/10': 89,
-            '2019/07/11': 288,
-            '2019/07/12': 268,
-            '2019/07/13': 92,
-            '2019/07/14': 103,
-            '2019/07/15': 178
+            'Jul 9, 2019': 149,
+            'Jul 10, 2019': 89,
+            'Jul 11, 2019': 288,
+            'Jul 12, 2019': 268,
+            'Jul 13, 2019': 92,
+            'Jul 14, 2019': 103,
+            'Jul 15, 2019': 178
           });
         });
       });

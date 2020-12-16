@@ -1,3 +1,4 @@
+const moment = require('../src/Moment');
 class Activity {
     constructor(user, data) {
         this.user = user;
@@ -47,7 +48,8 @@ class Activity {
         const index = this.data.findIndex(item => item.date === date);
         const weeklyData = this.data.slice(index, index + 7);
         const weeklyLog = weeklyData.reduce((week, day) => {
-            week[day.date] = day[property];
+            let newDate = moment(day.date).format('ll');
+            week[newDate] = day[property];
             return week;
           }, {});
         return weeklyLog;

@@ -13,9 +13,6 @@ const weeklyHrsSleptGraph = document.querySelector('#wkly-hrs-graph');
 const weeklyQltyGraph = document.querySelector('#wkly-qlty-graph');
 
 const stepsChart = new Chart(weeklyStepsGraph, {
-    axisX: {
-      valueFormatString: 'DD-MMM'
-    },
     type: 'line',
     data: {
     labels: Object.keys(activity1.createWeeklyActivityLog(activity1.data[activity1.data.length - 7].date, 'numSteps')),
@@ -25,18 +22,7 @@ const stepsChart = new Chart(weeklyStepsGraph, {
         data: Object.values(activity1.createWeeklyActivityLog(activity1.data[activity1.data.length - 7].date, 'numSteps'))
       }]
     },
-  options: {
-    // scales: {
-    //   xAxes: [{
-    //     type: 'time',
-    //     time: {
-    //       displayFormats: {
-    //         quarter: 'll'
-    //       }
-    //     }
-    //   }]
-    // }
-  }
+  options: {}
 });
 
 const flightsChart = new Chart(weeklyFlightsGraph, {
