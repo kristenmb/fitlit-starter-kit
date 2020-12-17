@@ -36,7 +36,7 @@ function displayUserProfile() {
   displayMilesWalked();
   displayCommunityAvg();
   displayFriends();
-};
+}
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -44,7 +44,7 @@ function getRandomIndex(array) {
 
 function displayGreeting() {
   greeting.innerText = `Welcome, ${currentUser.accessUserName()}`;
-};
+}
 
 function displayUserInfo() {
   userInfo.innerHTML = `
@@ -56,7 +56,7 @@ function displayUserInfo() {
             <p>STRIDE LENGTH: ${currentUser.strideLength}</p>
             <p>YOUR STEP GOAL: ${currentUser.dailyStepGoal}</p>
         </div>`
-};
+}
 
 function displayFriends() {
   friendsList.innerHTML = `

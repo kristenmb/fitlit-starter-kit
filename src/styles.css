@@ -14,8 +14,21 @@ h1 {
   margin: 30px;
 }
 
+img {
+  height: auto;
+  max-width: 20%;
+}
+
 p {
   text-align: center;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  text-align: center;
+  list-style-type: none;
 }
 
 .widget-wrapper {
@@ -26,6 +39,7 @@ p {
   margin: 20px;
   height: 100%;
   width: 100%;
+  margin: 0;
 }
 
 .widget {
@@ -63,11 +77,6 @@ p {
   align-items: center;
 }
 
-img {
-  height: auto;
-  max-width: 20%;
-}
-
 .small {
   font-size: 10pt;
 }
@@ -80,21 +89,11 @@ img {
   height: 65%;
   width: auto;
 }
+
 .user-info {
   width: 75vw;
   justify-content: space-between;
   font-size: 9pt;
-}
-
-p {
-  margin: 0;
-}
-
-ul {
-  margin: 0;
-  padding-left: 0;
-  text-align: center;
-  list-style-type: none;
 }
 
 .data {

@@ -2,7 +2,9 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const ActivityRepo = require('../src/ActivityRepo');
-const {activityRepoData} = require('./test-data/activity-data');
+const {
+  activityRepoData
+} = require('./test-data/activity-data');
 
 describe('ActivityRepo', () => {
   let activityRepo;

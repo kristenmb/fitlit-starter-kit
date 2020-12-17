@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*!
  * Chart.js v2.9.4
  * https://www.chartjs.org
