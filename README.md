@@ -27,7 +27,7 @@ Visit live site [here](https://kristenmb.github.io/fitlit-starter-kit/src/)
 ## Planning
 We utilized github projects for project management, that board can be found [here](https://github.com/kristenmb/fitlit-starter-kit/projects/1). <br>
 The detailed spec for this project can be found [here](http://frontend.turing.io/projects/fitlit.html). <br>
-For wireframing we used Miro and our project planning board can be found [here](https://miro.com/welcomeonboard/KsaOuCdyayrVNOwEPtEudewa3xcPRqkKMp5XCFAaHyWNQzYG0R7xqPOWJUtHhB3K).
+For wireframing we used Miro and our project planning board can be found [here](https://miro.com/app/board/o9J_kgeLwdg=/).
 
 ### Testing development
 For each file we created testing suites to ensure the build would function as expected with larger data sets. We utilized Mocha and Chai for testing, and created small data sets to test from. Although we created our own testing data sets, we worked to develop the functionality to be able to handle data sets of unknown sizes to help to ensure our functionality would remain viable. 
