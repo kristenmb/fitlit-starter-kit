@@ -1,5 +1,5 @@
 const allUsers = new UserRepository(userData);
-const currentUser = new User(allUsers.accessUser(getRandomIndex(userData)));
+const currentUser = new User(allUsers.accessUser(getRandomIndex(userData) + 1));
 const hydration = new Hydration(currentUser.id, hydrationData);
 const sleep = new Sleep(currentUser.id, sleepData);
 const activity = new Activity(currentUser, activityData);
@@ -7,16 +7,16 @@ const activityRepo = new ActivityRepo(activityData);
 const greeting = document.querySelector('#greeting');
 const userInfo = document.querySelector('#user-info');
 const friendsList = document.querySelector('#friends-list');
-const compareStep = document.querySelector('#compare-step');
 const dailyWater = document.querySelector('#dly-water');
 const dailySleepHrs = document.querySelector('#hrs-slept');
 const dailySleepQlty = document.querySelector('#sleep-qlty');
 const dailySteps = document.querySelector('#dly-steps');
 const dailyFlights = document.querySelector('#flights');
-const allTimeSleepAvg = document.querySelector('#all-time-sleep');
-const allTimeQltyAvg = document.querySelector('#all-time-quality');
 const minutesActive = document.querySelector('#min-active');
 const milesWalked = document.querySelector('#miles-walked');
+const allTimeSleepAvg = document.querySelector('#all-time-sleep');
+const allTimeQltyAvg = document.querySelector('#all-time-quality');
+const compareStep = document.querySelector('#compare-step');
 const compareDailySteps = document.querySelector('#compare-avg-steps');
 const compareActivityMinutes = document.querySelector('#compare-avg-min');
 const compareFlights = document.querySelector('#compare-avg-flights');
@@ -39,7 +39,9 @@ function displayUserProfile() {
 }
 
 function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
+  const number = Math.floor(Math.random() * array.length);
+  console.log(number);
+  return number;
 }
 
 function displayGreeting() {
@@ -48,12 +50,13 @@ function displayGreeting() {
 
 function displayUserInfo() {
   userInfo.innerHTML = `
-        <div class="side">
+        <div class="stacked">
             <p>${currentUser.address}</p>
-            <p>${currentUser.email}</p>
-        </div>
-        <div class="side">
             <p>STRIDE LENGTH: ${currentUser.strideLength}</p>
+
+        </div>
+        <div class="stacked">
+            <p>${currentUser.email}</p>
             <p>YOUR STEP GOAL: ${currentUser.dailyStepGoal}</p>
         </div>`
 }
@@ -73,11 +76,11 @@ function displayDailySleepStats() {
   dailySleepHrs.innerHTML = `
     <div class="stacked">
       <p class="data">${sleep.findByDate((sleep.data[sleep.data.length - 1].date), 'hoursSlept')}</p>
-      <p class="tiny">HRS SLEPT</p>
+      <p class="small">HRS SLEPT</p>
     </div>
     <div class="stacked">
       <p class="data">${sleep.findByDate((sleep.data[sleep.data.length - 1].date), 'sleepQuality')}</p>
-      <p class="tiny">SLEEP QUALITY</p>
+      <p class="small">SLEEP QUALITY</p>
     </div>`;
 }
 
@@ -85,12 +88,12 @@ function displayAllTimeSleepInfo() {
   allTimeSleepAvg.innerHTML = `
     <div class="stacked">
       <p class="data">${sleep.calcUserAvg('hoursSlept')}</p>
-      <p class="tiny">HRS SLEPT</p>
+      <p class="small">HRS SLEPT</p>
     </div>`;
   allTimeQltyAvg.innerHTML = `
       <div class="stacked">
         <p class="data">${sleep.calcUserAvg('sleepQuality')}</p>
-        <p class="tiny">SLEEP QUALITY</p>
+        <p class="small">SLEEP QUALITY</p>
       </div>`;
 
 }

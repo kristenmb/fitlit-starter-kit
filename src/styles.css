@@ -110,7 +110,8 @@ ul {
   .widget-wrapper {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(13, auto) grid-gap: 1%;
+    grid-template-rows: repeat(13, auto);
+    grid-gap: 1%;
     justify-content: center;
     margin: 20px;
     height: 100%;
