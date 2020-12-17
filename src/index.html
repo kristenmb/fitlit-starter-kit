@@ -1,155 +1,142 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
-    <title>Activity Tracker</title>
-  </head>
-  <body>
-    <div class="widget-wrapper">
-      <section class="widget extra-long">
-        <h1 class="greeting" id="greeting">Welcome, User!</h1>
-        <p id="user-info"> USER INFO </p>
-      </section>
-      <section class="widget" id="daily-steps">
-        <img src="../newassets/steps.png" alt="shoe soles" class="steps">
-        <p class="data" id="dly-steps">2637 <br> OF 4000</p>
-        <p>STEPS</p>
-      </section>
-      <section class="widget" id="daily-water">
-        <img src="../newassets/water.png" alt="water droplet" class="hydration">
-        <p class="data" id="dly-water">42oz</p>
-        <p>CONSUMED</p>
-      </section>
-      <section class="widget long" id="sleep-hrs">
-        <div class="stacked">
-          <p class="data" id="hrs-slept">5</p>
-          <p>HOURS SLEPT</p>
-          <p class="data" id="sleep-qlty">4</p>
-          <p>SLEEP QUALITY</p>
-        </div>
-        <img src="../newassets/sleep.png" alt="crescent moon and stars" class="sleep">
-        <p>RECOMMENDED:<br> 7-8 HRS <br> OF SLEEP*</p>
-      </section>
-      <section class="widget long">
-        <div class="stacked">
-          <p class="data" id="wkly-steps">WEEKLY STEPS</p>
-          <canvas class="graph" id="wkly-step-graph"></canvas>
-        </div>
-      </section>
-      <section class="widget long">
-        <div class="stacked">
-          <p class="data" id="wkly-flights">WEEKLY FLIGHTS CLIMBED</p>
-          <canvas class="graph" id="wkly-flights-graph"></canvas>
-        </div>
-      </section>
-      <section class="widget tall" id="friends-list">
-        <img src="../newassets/friends1.png" alt="two purple people highfiving" class="friends">
-        <ul>
-          <li>FRIEND 1</li>
-          <li>FRIEND 2</li>
-          <li>FRIEND 3</li>
-        </ul>
-      </section>
-      <section class="widget" id="stairs">
-        <div class="side">
-          <img src="../newassets/stairs.png" alt="staircase" class="steps">
-          <p class="data" id="record-flights">72</p>
-          <p>FLIGHTS</p>
-        </div>
-        <div class="side">
-          <!-- <img src="" alt="trophy" class="award"> -->
-          <p>YOUR ALL TIME STAIR CLIMBING RECORD!</p>
-        </div>
-      </section>
-      <section class="widget" id="minutes-active">
-        <img src="../newassets/running.png" alt="person running" class="activity">
-        <p class="data" id="min-active">62</p>
-        <p>MIN ACTIVE</p>
-      </section>
-      <section class="widget" id="">
-        <img src="../newassets/shoe.png" alt="running shoe" class="step">
-        <p class="data" id="miles-walked">1.3</p>
-        <p>MILES TODAY</p>
-      </section>
-      <section class="widget extra-long" id="">
-        <div class="side">
-          <img src="../newassets/friends.png" alt="two blue-green people highfiving" class="step">
-          <h2>COMMUNITY STATS</h2>
-          <img src="../newassets/friends.png" alt="two blue-green people highfiving" class="step">
-        </div>
-        <p>*DISCLAIMER* WE DO NOT ENCOURAGE COMPARING YOUR FITNESS JOURNEY TO ANOTHER USER'S!</p>
-        <div class="side">
-          <div>
-            <p id="compare-step"></p>
-            <p>STEP GOAL</p>
-          </div>
-          <div>
-            <p class="data" id="compare-avg-steps"></p>
-            <p>STEPS TODAY</p>
-          </div>
-          <div>
-            <p class="data" id="compare-avg-min"></p>
-            <p>MINS ACTIVE</p>
-          </div>
-          <div>
-            <p class="data" id="compare-avg-flights"></p>
-            <p>FLIGHTS CLIMBED</p>
-          </div>
-        </div>
-      </section>
-      <section class="widget long" id="wkly-water">
-        <div class="stacked">
-          <p class="data">WEEKLY WATER</p>
-          <canvas class="graph" id="wkly-water-graph"></canvas>
-        </div>
-      </section>
-      <section class="widget long">
-        <div class="stacked">
-          <p>WEEKLY MINUTES ACTIVE</p>
-          <canvas class="graph" id="wkly-mins-active-graph"></canvas>
-        </div>
-      </section>
-      <section class="widget long" id="wkly-hrs-slept">
-        <div class="stacked">
-          <p class="data">WEEKLY HOURS</p>
-          <canvas class="graph" id="wkly-hrs-graph"></canvas>
-        </div>
-      </section>
-      <section class="widget long" id="wkly-qlty">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <title>FitLit Activity Tracker</title>
+</head>
+<body>
+  <div class="widget-wrapper">
+    <section class="widget extra-long">
+      <header>FitLit</header>
+      <h1 id="greeting">Welcome, User</h1>
+      <p class="user-info side" id="user-info">User info here</p>
+    </section>
+    <section class="widget tall" id="daily-steps">
+      <img src="../newassets/steps.png" alt="neon green shoe soles" class="steps">
+      <p class="data" id="dly-steps"></p>
+    </section>
+    <section class="widget tall" id="daily-water">
+      <img src="../newassets/water.png" alt="neon blue water droplet" class="hydration">
+      <p class="data" id="dly-water"></p>
+      <p class="small">CONSUMED</p>
+    </section>
+    <section class="widget tall" id="sleep-hrs">
+      <div class="stacked">
+        <img src="../newassets/sleep.png" alt="neon purple crescent moon and stars" class="sleep">
+        <p class="data side" id="hrs-slept">5</p>
+      </div>
+      <p class="mini">RECOMMENDED: 7-8 HRS OF SLEEP*</p>
+    </section>
+    <section class="widget" id="minutes-active">
+      <img src="../newassets/running.png" alt="neon yellow icon of person running" class="activity">
+      <p class="data" id="min-active">62</p>
+      <p class="small">MIN ACTIVE</p>
+    </section>
+    <section class="widget tall">
+      <img src="../newassets/friends1.png" alt="two purple people highfiving" class="friends">
+      <p>TOP FRIENDS</p>
+      <ul id="friends-list">
+      </ul>
+    </section>
+    <section class="widget" id="stairs">
+      <img src="../newassets/stairs.png" alt="neon green staircase" class="steps">
+      <p class="data" id="flights">72</p>
+      <p class="small">FLIGHTS</p>
+    </section>
+    <section class="widget" id="">
+      <img src="../newassets/shoe.png" alt="neon yellow running shoe in motion" class="step">
+      <p class="data" id="miles-walked">1.3</p>
+      <p class="small">MILES TODAY</p>
+    </section>
+    <section class="widget stacked " id="total-sleep-stats">
+      <img src="../newassets/sleep.png" alt="alltime sleepstats graph" class="sleep">
+      <div class="side">
+        <p class="data" id="all-time-sleep"></p>
+        <p class="data" id="all-time-quality"></p>
+      </div>
+      <p class="mini close">ALL TIME AVERAGE SLEEP STATS</p>
+    </section>
+    <section class="widget long" >
+      <div class="stacked">
+        <p class="data" id="wkly-steps">WEEKLY STEP COUNT</p>
+        <canvas id="wkly-step-graph" aria-label="line graph depicting user's step count for the latest week"></canvas>
+      </div>
+    </section>
+    <section class="widget long">
+      <div class="stacked">
+        <p class="data" id="wkly-flights">WEEKLY FLIGHTS CLIMBED</p>
+        <canvas id="wkly-flights-graph" aria-label="line graph depicting the number of stairs climbed for the latest week"></canvas>
+      </div>
+    </section>
+    <section class="widget long" id="wkly-water">
+      <div class="stacked">
+        <p class="data">WEEKLY WATER CONSUMED</p>
+        <canvas id="wkly-water-graph" aria-label="line graph depicting user's water intake for the latest week"></canvas>
+      </div>
+    </section>
+    <section class="widget long">
+      <div class="stacked">
+        <p>WEEKLY MINUTES ACTIVE</p>
+        <canvas id="wkly-mins-active-graph" aria-label="line graph depicting minutes active for user for the latest week"></canvas>
+      </div>
+    </section>
+    <section class="widget long" id="wkly-hrs-slept">
+      <div class="stacked">
+        <p class="data">WEEKLY HOURS SLEPT</p>
+        <canvas id="wkly-hrs-graph" aria-label="line graph depicting hours slept for the latest week"></canvas>
+      </div>
+    </section>
+    <section class="widget long" id="wkly-qlty">
+      <div>
+        <p class="data">WEEKLY SLEEP QUALITY</p>
+        <canvas id="wkly-qlty-graph" aria-label="line graph depicting user's sleep quality for the latest week"></canvas>
+      </div>
+    </section>
+    <section class="widget extra-long">
+      <div class="side scale">
+        <img src="../newassets/friends.png" alt="two blue-green people highfiving" class="step">
+        <h2>COMMUNITY STATS</h2>
+        <img src="../newassets/friends.png" alt="two blue-green people highfiving" class="step">
+      </div>
+      <p class="small">*DISCLAIMER* WE DO NOT ENCOURAGE COMPARING YOUR FITNESS JOURNEY TO ANOTHER USER'S!</p>
+      <div class="side">
         <div>
-          <p class="data">WEEKLY QUALITY</p>
-          <canvas class="graph" id="wkly-qlty-graph"></canvas>
+          <p id="compare-step"></p>
+          <p>STEP GOAL</p>
         </div>
-      </section>
-      <section class="widget long stacked" id="total-sleep-stats">
-        <p>ALL TIME AVERAGE SLEEP STATS</p>
-        <div class="side">
-          <p class="data" id="all-time-sleep"></p>
-          <p>HRS</p>
-          <img src="../newassets/sleep.png" alt="alltime sleepstats graph" class="sleep">
-          <p class="data" id="all-time-quality"></p>
-          <p>QLTY</p>
+        <div>
+          <p class="data" id="compare-avg-steps"></p>
+          <p>STEPS TODAY</p>
         </div>
-      </section>
-    </div>
-    <script type="text/javascript" src="../data/users.js"></script>
-    <script type="text/javascript" src="../data/hydration.js"></script>
-    <script type="text/javascript" src="../data/sleep.js"></script>
-    <script type="text/javascript" src="../data/activity.js"></script>
-    <script type="text/javascript" src="./Moment.js"></script>
-    <script type="text/javascript" src="./UserRepository.js"></script>
-    <script type="text/javascript" src="./User.js"></script>
-    <script type="text/javascript" src="./Hydration.js"></script>
-    <script type="text/javascript" src="./Sleep.js"></script>
-    <script type="text/javascript" src="./SleepRepo.js"></script>
-    <script type="text/javascript" src="./Activity.js"></script>
-    <script type="text/javascript" src="./ActivityRepo.js"></script>
-    <script type="text/javascript" src="./Charts.js"></script>
-    <script type="text/javascript" src="./chart-style.js"></script>
-    <script type="text/javascript" src="./scripts.js"></script>
-  </body>
+        <div>
+          <p class="data" id="compare-avg-min"></p>
+          <p>MINS ACTIVE</p>
+        </div>
+        <div>
+          <p class="data" id="compare-avg-flights"></p>
+          <p>FLIGHTS CLIMBED</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script type="text/javascript" src="../data/users.js"></script>
+  <script type="text/javascript" src="../data/hydration.js"></script>
+  <script type="text/javascript" src="../data/sleep.js"></script>
+  <script type="text/javascript" src="../data/activity.js"></script>
+  <script type="text/javascript" src="./Moment.js"></script>
+  <script type="text/javascript" src="./UserRepository.js"></script>
+  <script type="text/javascript" src="./User.js"></script>
+  <script type="text/javascript" src="./Hydration.js"></script>
+  <script type="text/javascript" src="./Sleep.js"></script>
+  <script type="text/javascript" src="./SleepRepo.js"></script>
+  <script type="text/javascript" src="./Activity.js"></script>
+  <script type="text/javascript" src="./ActivityRepo.js"></script>
+  <script type="text/javascript" src="./Charts.js"></script>
+  <script type="text/javascript" src="./scripts.js"></script>
+  <script type="text/javascript" src="./chart-style.js"></script>
+</body>
 </html>

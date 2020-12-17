@@ -1,5 +1,4 @@
 * {
-  /* border: solid 2px pink; */
   font-family: 'Hind Siliguri', sans-serif;
   color: white;
 }
@@ -7,7 +6,7 @@
 html {
   height: 100%;
   width: 100%;
-  background-color: #28242E;
+  background-color: rgb(19, 17, 44);
 }
 
 h1 {
@@ -15,25 +14,37 @@ h1 {
   margin: 30px;
 }
 
+img {
+  height: auto;
+  max-width: 20%;
+}
+
 p {
   text-align: center;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  text-align: center;
+  list-style-type: none;
 }
 
 .widget-wrapper {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  grid-template-rows: repeat(2, auto);
-  grid-gap: 5%;
+  grid-gap: 1%;
   justify-content: center;
   margin: 20px;
   height: 100%;
   width: 100%;
+  margin: 0;
 }
 
 .widget {
   border-radius: 20px;
-  /* background: rgb(24,127,148); */
-  background: radial-gradient(circle, rgba(24,127,148,1) .5%, rgba(3,5,43,1) 75%);
+  background: radial-gradient(circle, rgba(24, 127, 148, 1) .5%, rgba(3, 5, 43, 1) 75%);
   width: 100%;
   height: 100%;
   display: flex;
@@ -51,10 +62,6 @@ p {
   flex-direction: row;
 }
 
-.tall {
-  grid-row: span 2;
-}
-
 .stacked {
   display: flex;
   flex-direction: column;
@@ -70,12 +77,68 @@ p {
   align-items: center;
 }
 
-
-img {
-  height: auto;
-  max-width: 20%;
+.small {
+  font-size: 10pt;
 }
 
-.step {
-  fill: #63f44d;
+.mini {
+  font-size: 6pt;
+}
+
+.scale {
+  height: 65%;
+  width: auto;
+}
+
+.user-info {
+  width: 75vw;
+  justify-content: space-between;
+  font-size: 9pt;
+}
+
+.data {
+  font-size: 15pt;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .widget-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(13, auto);
+    grid-gap: 1%;
+    justify-content: center;
+    margin: 20px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .tall {
+    grid-row: span 2
+  }
+
+  .extra-long,
+  .long {
+    grid-column: span 3;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .widget-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .widget {
+    margin: 5% 0 5% 0;
+  }
 }

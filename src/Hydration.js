@@ -1,5 +1,5 @@
-if (typeof require !== 'undefined') {  
-  var moment = require('../src/Moment'); 
+if (typeof require !== 'undefined') {
+  var moment = require('../src/Moment');
 }
 
 class Hydration {
@@ -36,5 +36,5 @@ class Hydration {
 
 
 if (typeof module !== 'undefined') {
-    module.exports = Hydration;
-};
+  module.exports = Hydration;
+}
